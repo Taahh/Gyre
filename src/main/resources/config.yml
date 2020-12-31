@@ -1,0 +1,19 @@
+# Gyre 0.1.2 #
+
+# Future options will be: mongodb, mariadb, sqlite
+# Current option(s) available: file
+# MySQL details not required for SQLite
+options:
+  storage: file
+  mongodb:
+    user: admin
+    password: password123
+    hostname: 127.0.0.1
+    port: 27017
+    auth-db: admin
+  mariadb:
+    user: root
+    password: password123
+    hostname: 127.0.0.1
+    port: 3306
+    db: admin
