@@ -2,6 +2,7 @@ package com.taahyt.gyre;
 
 import com.taahyt.gyre.commands.impl.GyreCMD;
 import com.taahyt.gyre.config.Config;
+import com.taahyt.gyre.listeners.ServerMotdListener;
 import com.taahyt.gyre.logger.PLogger;
 import com.taahyt.gyre.ranking.PermissionObject;
 import com.taahyt.gyre.ranking.RankManager;
@@ -12,6 +13,8 @@ import com.taahyt.gyre.storage.mongodb.MongoDBStorage;
 import com.taahyt.gyre.storage.sql.MariaDBStorage;
 import com.taahyt.gyre.storage.sql.SQLiteStorage;
 import org.apache.commons.lang.StringUtils;
+import org.bukkit.BanList;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.json.JSONObject;
 
@@ -48,6 +51,8 @@ public class Gyre extends JavaPlugin {
     @Override
     public void onEnable() {
         registerCommands();
+        registerListeners();
+        Bukkit.setMaxPlayers(getMainConfig().getInt("server.max-player-count"));
         PLogger.info("Enabling " + getDescription().getName() + " v" + getDescription().getVersion());
         PLogger.info(String.format("Authors: [%s]", StringUtils.join(getDescription().getAuthors(), ", ")));
     }
@@ -79,5 +84,10 @@ public class Gyre extends JavaPlugin {
     private void registerCommands()
     {
         new GyreCMD();
+    }
+
+    private void registerListeners()
+    {
+        new ServerMotdListener();
     }
 }

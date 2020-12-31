@@ -17,3 +17,6 @@ options:
     hostname: 127.0.0.1
     port: 3306
     db: admin
+server:
+  motd: "&-Gyre &- &c%mcversion%"
+  max-player-count: 30

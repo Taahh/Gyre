@@ -1,11 +1,13 @@
 package com.taahyt.gyre.config;
 
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Objects;
 
 public class Config extends YamlConfiguration {
     private final File file;
@@ -69,5 +71,11 @@ public class Config extends YamlConfiguration {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String getString(String path)
+    {
+        return ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(super.getString(path)));
     }
 }
