@@ -1,0 +1,12 @@
+{
+  "permissionObject": {
+    "inheritances": [
+      "deop"
+    ],
+    "disabledPerms": [
+      "bukkit.command.reload"
+    ]
+  },
+  "prefix": "&8[&cOperator&8]",
+  "loginMsg": "is an Operator"
+}

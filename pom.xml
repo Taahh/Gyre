@@ -74,6 +74,14 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Utilities -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20200518</version>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- Databasing -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
